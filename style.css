@@ -141,17 +141,7 @@ button:hover {
                 font-weight: var(--font-weight-semibold);
             }
 
-            .close {
-                grid-area: 2 / 3 / 3 / 4;
-                margin-top: auto;
-                margin-left: auto;
-            }
 
-            .close:hover {
-                cursor: pointer;
-                transform: scale(1.2);
-                transition: 0.15s ease-in-out;
-            }
         }
 
         .device-info:not(:last-child) {
@@ -311,11 +301,89 @@ button:hover {
     }
 }
 
-/*@media (max-width: 1025px) {*/
-/*    .main-content .second-half #coupon-section {*/
-/*        grid-template-columns: 1fr;*/
-/*    }*/
-/*}*/
+.close {
+    grid-area: 2 / 3 / 3 / 4;
+    margin-top: auto;
+    margin-left: auto;
+    transition: transform 0.2s ease-in-out; /* Плавный переход для transform */
+}
+
+.close:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0.7rem;
+    text-align: center;
+    box-shadow: 0 4px 4px -1px rgba(17, 23, 41, 0.05);
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-modal {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+}
+
+.close svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Центрирование иконки */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container svg {
+    width: 100px;
+    height: 100px;
+    fill: limegreen;
+}
+
+/* Заголовок и текст */
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--color-dark-blue);
+    font-size: clamp(0.9rem, 0.8285714285714286rem + 0.17857142857142852vw, 1rem);
+}
+
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.open .modal-content {
+    transform: scale(1);
+}
 
 @media (max-width: 900px) {
     .main-content .first-half .coupon-section #coupon-submit-button span {
@@ -325,7 +393,7 @@ button:hover {
 
 @media (max-width: 796px) {
     .main-content .first-half .device-info {
-                grid-template-rows: 1fr auto;
+        grid-template-rows: 1fr auto;
 
     }
 }
@@ -333,6 +401,19 @@ button:hover {
 @media (max-width: 640px) {
     .main-content {
         flex-direction: column;
+    }
+
+    .modal-content {
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 464px) {
+    .checkout {
+        background-image: url("device-shop-checkout-master/resources/background-image.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
     }
 }
 

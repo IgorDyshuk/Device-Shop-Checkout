@@ -90,7 +90,6 @@ function updateValues(coupon) {
 }
 
 
-
 updateValues(false);
 
 
@@ -128,7 +127,7 @@ document.querySelector(".device-section").addEventListener("click", (event) => {
         // Когда анимация завершится – удаляем элемент из DOM
         deviceInfo.addEventListener("transitionend", () => {
             deviceInfo.remove();
-        }, { once: true });
+        }, {once: true});
     }
 });
 
@@ -191,6 +190,8 @@ const inputs = [{
 }]
 
 form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Останавливает перезагрузку формы
+
     let isValid = true;
 
     inputs.forEach(({element, validate, errorMessage}) => {
@@ -202,7 +203,7 @@ form.addEventListener("submit", (event) => {
             if (element.tagName === "SELECT") {
                 const firstOption = element.querySelector("option:first-child");
                 firstOption.innerHTML = errorMessage;
-                firstOption.style.color = 'red'
+                firstOption.style.color = 'red';
                 element.style.border = "2px solid red";
             } else {
                 element.value = '';
@@ -212,18 +213,17 @@ form.addEventListener("submit", (event) => {
             }
         } else {
             element.style.border = "";
-            element.classList.remove('red-placeholder')
+            element.classList.remove('red-placeholder');
         }
-
-        element.addEventListener("input", () => {
-            if (element.value.trim() !== "" && validate(element.value)) {
-                element.style.border = "";
-                element.classList.remove('red-placeholder');
-            }
-        });
     });
 
-    if (!isValid) {
-        event.preventDefault();
+    if (isValid) {
+        setTimeout(()=>{
+        document.getElementById('confirmation-modal').classList.add('open');
+        }, 1000)
     }
 });
+
+document.querySelector(".close-modal").addEventListener("click", (event) => {
+    location.reload();
+})
