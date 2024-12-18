@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+          rel="stylesheet">
+    <title>Device Shop Checkout</title>
+</head>
+<body>
+<div class="checkout">Checkout
+    <div id="checkout-items">3 ITEMS</div>
+</div>
+
+<div class="main-content">
+    <div class="first-half">
+        <div class="device-section">
+            <!--        iPhone-->
+            <div class="device-info">
+                <div class="device-image">
+                    <img src="device-shop-checkout-master/resources/Gold@2x.png" alt="">
+                </div>
+                <div class="device-name">
+                    iPhone 12 Pro
+                    <div class="device-color">Golden</div>
+                </div>
+                <div class="device-number">x 1</div>
+                <div class="device-cost">$999.00</div>
+                <div class="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M18 6l-12 12"/>
+                        <path d="M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+            <!--        Apple Watch-->
+            <div class="device-info" id="apple-watch">
+                <div class="device-image">
+                    <img src="device-shop-checkout-master/resources/Apple-watchx2.png" alt="">
+                </div>
+                <div class="device-name">
+                    Apple Watch
+                    <div class="device-color">Blue</div>
+                </div>
+                <div class="device-number">x 1</div>
+                <div class="device-cost">$399.00</div>
+                <div class="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M18 6l-12 12"/>
+                        <path d="M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+            <!--        iMac-->
+            <div class="device-info" id="iMac">
+
+                <div class="device-image">
+                    <img src="device-shop-checkout-master/resources/iMac@2x.png" alt="">
+                </div>
+                <div class="device-name">
+                    iMac
+                    <div class="device-color">Green</div>
+                </div>
+                <div class="device-number">x 1</div>
+                <div class="device-cost">$1199.00</div>
+                <div class="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M18 6l-12 12"/>
+                        <path d="M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <hr class="colored-hr">
+
+        <div class="coupon-section">
+            <input id="coupon-input" type="text" placeholder="Enter coupon Code">
+            <button id="coupon-submit-button">Apply <span>coupon</span></button>
+        </div>
+
+        <div class="sum-section">
+            <div id="sub-total">Sub total</div>
+            <div id="sub-total-value">$0</div>
+            <div id="tax">Tax</div>
+            <div id="tax-value">$0</div>
+            <div class="sale">Sale</div>
+            <div class="sale" id="sale-value">$0</div>
+            <div id="total">Total</div>
+            <div id="total-value">$0</div>
+        </div>
+    </div>
+    <div class="second-half">
+        <div class="second-half-heading">
+            Contact Information
+        </div>
+        <form id="contact-form">
+            <div class="contact-form-row">
+                <label class="contact-form-label" for="firstLast-name">First & Last name</label>
+                <input class="contact-form-input" type="text" id="firstLast-name"
+                       placeholder="Enter first & last name">
+            </div>
+
+            <div class="contact-form-row">
+                <label class="contact-form-label" for="Email-address">Email Address</label>
+                <input class="contact-form-input" type="email" id="Email-address" placeholder="Enter email address">
+            </div>
+
+            <div class="contact-form-row" id="country-post">
+                <label class="contact-form-label" for="country-select">Country</label>
+                <label class="contact-form-label" for="postal-code">Postal Code</label>
+                <select class="contact-form-input" id="country-select">
+                    <option value="" disabled selected hidden>Choose your country</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Canada">Canada</option>
+                </select>
+
+                <input class="contact-form-input" type="number" id="postal-code" placeholder="Enter your postal code">
+            </div>
+            <button type="submit" class="contact-form-submit">Continue</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
